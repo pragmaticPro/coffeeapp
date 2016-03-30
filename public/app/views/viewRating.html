@@ -1,0 +1,213 @@
+<div class="row-marketing">
+    <div class="col-lg-6">
+        
+        <h4 class="h4">View All Ratings</h4>
+        <p> <button type="button"  name="submit" class="btn btn-success" ng-click="viewAllRatings()" data-toggle="modal" data-target="#allRatingsModal">Submit</button></p>
+  
+        
+        <h4 class="h4">View Ratings by Coffee Shop</h4>
+        <p> <select class="btn btn-default dropdown-toggle" data-toggle="dropdown" ng-model="coffeeShop">
+                    <option value="Pour Boy">Pour Boy</option>
+                    <option value="Cawfee">Cawfee</option>
+                    <option value="Bar Mondo Cafe">Bar Mondo Cafe</option>
+                    <option value="Alimentari">Alimentari</option>
+                    <option value="Botero">Botero</option>
+                    <option value="Cremosa Espresso" selected="selected">Cremosa Espresso</option>
+                    <option value="Emjays on Wharf">Emjays on Wharf</option>
+                    <option value="Nespresso Store">Nespresso Store</option>
+                    <option value="Esspresso Republic">Esspresso Republic</option>
+                    <option value="The Coop">The Coop</option>
+                    <option value="Christie Building Kitchen">Christie Building Kitchen</option>
+                    <option value="Le Bon Choix">Le Bon Choix</option>
+                    <option value="Christie Building Foyer">Christie Building Foyer</option>
+                    <option value="Noose Chocolate Factory">Noose Chocolate Factory</option>    
+                    <option value="Kiss the Berry">Kiss the Berry</option>
+          
+          </select>  <p> <button type="button"  name="submit" class="btn btn-success" ng-click="viewRatingsByCoffeeShop(coffeeShop)" data-toggle="modal" data-target="#allRatingsByCoffeeShopModal">Submit</button></p>
+    
+    <div>
+        <h4 class="h4">View Ratings by Coffee</h4>
+                  <p>
+               <select class="btn btn-default dropdown-toggle" data-toggle="dropdown"ng-model="coffeeName" >
+                    <option value="Volluto">Volluto</option>
+                    <option value="Arpeggio" selected="selected">Arpeggio</option>
+                    <option value="Skim Milk Flat White">Skim Milk Flat White</option>
+                    <option value="Long Black with Milk">Long Black with Milk</option>
+                    <option value="Flat White">Flat White</option>
+                    <option value="Skinny Flat White">Skinny Flat White</option>
+                    <option value="Cortado">Cortado</option>
+                    <option value="Doppio">Doppio</option>
+                    <option value="Caps w Soy">Caps w Soy</option>
+                    <option value="Half Strength Long Black With Soy Milk">half strength long black with Soy Milk</option>
+                    <option value="Cold press iced latte">Cold press iced latte</option>
+                    <option value="Chai Latte">Chai Latte</option>
+                    <option value="Nescafe Blend 43">Nescafe Blend 43</option>
+                    <option value="38% Hot Chocolate">38% Hot Chocolate</option>
+                    <option value="Cold press">Cold press</option>
+                    <option value="Lavinto">Lavinto</option>
+                    <option value="Cappuccino">Cappuccino</option>
+                    <option value="Americano">Americano</option>
+                    <option value="Misto">Misto</option>
+                    <option value="White Choclate Mocha">White Choclate Mocha</option>
+                    <option value="Mocha">Mocha</option>
+                    <option value="Express Con Panna">Express Con Panna</option>
+                    <option value="Caramel Mocha">Caramel Mocha</option>
+               </select><p> <button type="button"  name="submit" class="btn btn-success" ng-click="viewRatingsByCoffee(coffeeName)" data-toggle="modal" data-target="#allRatingsByCoffeeModal">Submit</button></p>
+         
+    
+    
+
+        <div id="allRatingsModal" class="modal fade" role="dialog">
+            <div class= "modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal"></button>
+                        <h4 class="modal-title">Coffee Ratings</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div>
+                            <p> Results </p>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>User</th>
+                                    <th>Shop</th>
+                                    <th>Ambience</th>
+                                    <th>Drink</th>
+                                    <th>Taste</th>
+                                    <th>Recommended</th>
+                                    
+                                </tr>
+                                <tr ng-repeat="rating in ratings">
+                                    <td>{{rating.user}}</td>
+                                    <td>{{rating.coffeeShop}}</td>
+                                    <td>{{rating.ambience}}</td>
+                                    <td>{{rating.coffeeName}}</td>
+                                    <td>{{rating.coffeeTaste}}</td>
+                                    <td>{{rating.recommended}}</td>
+                                 
+                                </tr>
+                            </table>
+    
+                        </div>
+
+                      
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+           <div id="allRatingsByCoffeeShopModal" class="modal fade" role="dialog">
+            <div class= "modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal"></button>
+                        <h4 class="modal-title">Coffee Ratings</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div>
+                            <p> Results </p>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>User</th>
+                                    <th>Ambience</th>
+                                    <th>Drink</th>
+                                    <th>Taste</th>
+                                    <th>Recommended</th>
+                                    
+                                    
+                                </tr>
+                                <tr ng-repeat="rating in ratings">
+                                    <td>{{rating.user}}</td>
+                                    <td>{{rating.ambience}}</td>
+                                    <td>{{rating.coffeeName}}</td>
+                                    <td>{{rating.coffeeTaste}}</td>
+                                    <td>{{rating.recommended}}</td>
+                                 
+                                </tr>
+                            </table>
+    
+                        </div>
+
+                      
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>  
+            </div>
+        </div>
+        
+        
+           <div id="allRatingsByCoffeeModal" class="modal fade" role="dialog">
+            <div class= "modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal"></button>
+                        <h4 class="modal-title">Coffee Ratings</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="panel panel-default">
+                            <div>
+                            <p> Results </p>
+                            <table class="table table-condensed">
+                                <tr>
+                                    <th>User</th>
+                                    <th>Coffee Shop</th>
+                                    <th>Ambience</th>
+                                    <th>Taste</th>
+                                    <th>Recommended</th>
+                                    
+                                    
+                                </tr>
+                                <tr ng-repeat="rating in ratings">
+                                    <td>{{rating.user}}</td>
+                                    <td>{{rating.coffeeShop}}</td>
+                                    <td>{{rating.ambience}}</td>
+                                    <td>{{rating.coffeeTaste}}</td>
+                                    <td>{{rating.recommended}}</td>
+                                 
+                                </tr>
+                            </table>
+    
+                        </div>
+
+                      
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>  
+            </div>
+        </div>
+    
+    </div>
+</div>
+
+<!--
+    <div>
+    <p> Results </p>
+        <table class="table table-condensed">
+            <tr>
+                <th>User</th>
+                <th>CoffeeShop</th>
+            </tr>
+            <tr ng-repeat="rating in ratings">
+                <td>{{rating.user}}</td>
+                <td>{{rating.coffeeShop}}</td>
+            </tr>
+        </table>
+    
+    </div>
+-->
+</div>

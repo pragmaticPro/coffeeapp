@@ -1,0 +1,106 @@
+<style>
+
+    #comments{
+        width:300px;
+        height:100px;
+    }
+    .h4{
+        color:aqua;
+    }
+    .message{
+        color:aqua;
+    }
+
+</style>
+
+<div class="row-marketing">
+        <div class="col-lg-6">
+          <h4 class="h4">Who's coffee experience ?</h4>
+          <p><input type="text" name="user" ng-model="ratingData.user"/></p>
+
+          <h4 class="h4">What coffee ?</h4>
+          <p>
+               <select class="btn btn-default dropdown-toggle" data-toggle="dropdown" name ="coffeeName" ng-model="ratingData.coffeeName" required>
+                    <option value="Volluto">Volluto</option>
+                    <option value="Arpeggio" selected="selected">Arpeggio</option>
+                    <option value="Skim Milk Flat White">Skim Milk Flat White</option>
+                    <option value="Long Black with Milk">Long Black with Milk</option>
+                    <option value="Flat White">Flat White</option>
+                    <option value="Skinny Flat White">Skinny Flat White</option>
+                    <option value="Cortado">Cortado</option>
+                    <option value="Doppio">Doppio</option>
+                    <option value="Caps w Soy">Caps w Soy</option>
+                    <option value="Half Strength Long Black With Soy Milk">half strength long black with Soy Milk</option>
+                    <option value="Cold press iced latte">Cold press iced latte</option>
+                    <option value="Chai Latte">Chai Latte</option>
+                    <option value="Nescafe Blend 43">Nescafe Blend 43</option>
+                    <option value="38% Hot Chocolate">38% Hot Chocolate</option>
+                    <option value="Cold press">Cold press</option>
+                    <option value="Lavinto">Lavinto</option>
+                    <option value="Cappuccino">Cappuccino</option>
+                    <option value="Americano">Americano</option>
+                    <option value="Misto">Misto</option>
+                    <option value="White Choclate Mocha">White Choclate Mocha</option>
+                    <option value="Mocha">Mocha</option>
+                    <option value="Express Con Panna">Express Con Panna</option>
+                    <option value="Caramel Mocha">Caramel Mocha</option>
+               </select>
+          </p>
+            <h4 class="h4">What coffee taste ?</h4>
+            <p><select class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="coffeeTaste" ng-model="ratingData.coffeeTaste">
+                    <option value="poor">poor</option>
+                    <option value="satisfactory">satisfactory</option>
+                    <option value="good">good</option>
+                    <option value="very good">very good</option>
+                    <option value="outstanding">outstanding</option>
+                    <option value="exceptional" selected="selected">exceptional</option>
+               </select></p>
+     
+        </div>
+
+        <div class="col-lg-6">
+          
+                 <h4 class="h4">What coffee shop ?</h4>
+                 <p> <select class="btn btn-default dropdown-toggle" data-toggle="dropdown" name= "coffeeShop" ng-model="ratingData.coffeeShop" >
+                    <option value="Pour Boy">Pour Boy</option>
+                    <option value="Cawfee">Cawfee</option>
+                    <option value="Bar Mondo Cafe">Bar Mondo Cafe</option>
+                    <option value="Alimentari">Alimentari</option>
+                    <option value="Botero">Botero</option>
+                    <option value="Cremosa Espresso" selected="selected">Cremosa Espresso</option>
+                    <option value="Emjays on Wharf">Emjays on Wharf</option>
+                    <option value="Nespresso Store">Nespresso Store</option>
+                    <option value="Esspresso Republic">Esspresso Republic</option>
+                    <option value="The Coop">The Coop</option>
+                    <option value="Christie Building Kitchen">Christie Building Kitchen</option>
+                    <option value="Le Bon Choix">Le Bon Choix</option>
+                    <option value="Christie Building Foyer">Christie Building Foyer</option>
+                    <option value="Noose Chocolate Factory">Noose Chocolate Factory</option>    
+                    <option value="Kiss the Berry">Kiss the Berry</option>
+          
+               </select></p>
+
+          <h4 class="h4">What ambience ?</h4>
+          <p><select class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="ambience" ng-model="ratingData.ambience" >
+                    <option value="cool">cool</option>
+                    <option value="relaxing">relaxing</option>
+                    <option value="too noisy">too noisy</option>
+                    <option value="uplifting">uplifting</option>
+                    <option value="jovial">jovial</option>
+              </select></p>
+            
+          
+                <h4 class="h4">Would you recommend further ?</h4>
+              <p><select class="btn btn-default dropdown-toggle" data-toggle="dropdown" name="recommended" ng-model="ratingData.recommended" >
+                    <option value="yes">yes</option>
+                    <option value="no">no</option> 
+              </select></p>
+
+          <h4 class="h4">Your comments</h4>
+          <p><textarea name="comments" ng-model="ratingData.comments"></textarea></p>
+            
+          
+          <p> <button type="button"  name="submit" class="btn btn-success"  ng-click="registerCoffeeExperience(ratingData)">Submit</button></p>
+            <p><h4 class="message">{{message}}</h4></p>
+        </div>
+      </div>
